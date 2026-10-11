@@ -1,0 +1,22 @@
+{
+	"provideLibs": [	
+		    "libdummy_binary_libhardware-x86_64-v2.so.so",
+		    "libdummy_binary_libhardware.so.so",
+		    "libdummy_ext_libhardware-x86_64-v2.so",
+		    "libdummy_ext_libhardware.so",
+		    "libdummy_headers_ext_libhardware-x86_64-v2.so",
+		    "libdummy_headers_ext_libhardware.so",
+		    "libhardware-x86_64-v2.so",
+		    "libhardware.so"
+	],
+	"requireLibs": [	
+		    "libc++_shared.so",
+		    "libc.so",
+		    "libcutils.so",
+		    "libdl.so",
+		    "liblog.so",
+		    "libm.so",
+		    "libvndksupport.so"
+	],
+	"visible": true
+}
