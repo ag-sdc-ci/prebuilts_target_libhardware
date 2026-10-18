@@ -40,3 +40,10 @@ cc_prebuilt_library_shared {
     min_sdk_version: "29",
     srcs: ["src/lib/libhardware.so"],
 }
+
+// Resolution stanza: multihal (hardware/libhardware/modules/sensors) is dropped from the
+// framework-only tree; consumer is android.hardware.sensors@1.0-impl (static_libs).
+cc_library_static {
+    name: "multihal",
+    vendor: true,
+}
