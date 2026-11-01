@@ -11,14 +11,13 @@ cc_library_headers {
     product_available: true,
     recovery_available: true,
     host_supported: true,
+    min_sdk_version: "29",
     apex_available: [
         "//apex_available:platform",
-        "com.android.btservices",
-        "com.android.media",
-        "com.android.media.swcodec",
+        "//apex_available:anyapex",
     ],
     export_include_dirs: [
-        "src/include",
+        "include",
     ],
 }
 
@@ -30,7 +29,7 @@ cc_prebuilt_library_shared {
     host_supported: true,
     check_elf_files: false,
     export_include_dirs: [
-        "src/include",
+        "include",
     ],
     prefer: true,
     apex_available: [
@@ -38,7 +37,14 @@ cc_prebuilt_library_shared {
         "//apex_available:platform",
     ],
     min_sdk_version: "29",
-    srcs: ["src/lib/libhardware.so"],
+    arch: {
+        x86_64: {
+            srcs: ["lib64/libhardware.so"],
+        },
+        x86: {
+            srcs: ["lib/libhardware.so"],
+        },
+    },
 }
 
 // Resolution stanza: multihal (hardware/libhardware/modules/sensors) is dropped from the
